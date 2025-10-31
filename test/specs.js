@@ -2,6 +2,14 @@ const chai = require("chai");
 const expect = chai.expect;
 const { isFive, isOdd, myRange } = require("../funcs");
 
+/*
+isFive(num)
+- Purpose: Checks if the input is exactly the number 5.
+- Tests:
+- Returns true for 5
+- Returns false for other numbers and non-number inputs like strings
+- Coverage: Basic truthy and falsy cases are covered.
+*/
 describe("isFive(num)", () => {
   it("should return true if the num is 5 otherwise false", () => {
     const num1 = 5;
@@ -21,6 +29,15 @@ describe("isFive(num)", () => {
   });
 });
 
+/*
+isOdd(number)
+- Purpose: Determines if a number is odd.
+- Tests:
+- Returns true for positive and negative odd numbers
+- Returns false for positive and negative even numbers
+- Throws an error for non-number inputs (string, object, array)
+- Coverage: Excellent — includes edge cases and type validation.
+*/
 describe("isOdd(number)", () => {
   it("should return true if number is odd", () => {
     const num1 = 3;
@@ -61,6 +78,15 @@ describe("isOdd(number)", () => {
   });
 });
 
+/*
+myRange(min, max, step)
+- Purpose: Generates an array of numbers from min to max, incrementing by step.
+- Tests:
+- Returns correct array when step is not provided (default step=1)
+- Returns correct array when step is provided
+- Returns empty array if min is greater than max
+- Coverage: Good — tests both default and custom step values, as well as edge cases.
+*/
 describe("myRange(min, max, step)", () => {
   context("if step is not provided", () => {
     it("should return the correct array with default value step=1", () => {
